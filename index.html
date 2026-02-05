@@ -5,31 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List - Jerry</title>
 
-    <!-- CSS file here -->
+    <!-- CSS External -->
     <link rel="stylesheet" href="css/style.css" />
 
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
+
   <body>
-    <!-- Header here-->
+    <!-- Header Content -->
     <header>
-      <h1 class="text-center text-2xl font-bold">Todo List - Jerry</h1>
+      <h1 class="text-2xl font-bold pb-8">Todo List - Jerry</h1>
     </header>
 
-    <!-- Main content here -->
-    <main class="max-w-md mx-auto p-4">
-      <div class="mb-4">
-        <input
-          type="text"
-          id="todo-input"
-          class="w-full p-2 border border-gray-300 rounded"
-          placeholder="Enter a new todo item"
-        />
-      </div>
-      <div class="mb-4">
+    <!-- Main Content -->
+    <main>
+      <!-- Form Section -->
+      <section>
+        <form>
+          <!-- Todo Input -->
+          <input
+            class="border p-2 rounded"
+            type="text"
+            id="todo-input"
+            placeholder="Enter a new todo item"
+          />
+
+          <!-- Date Input -->
+          <input
+            class="border p-2 rounded"
+            type="date"
+            id="todo-date"
+            placeholder="Enter due date"
+          />
+        </form>
+
+        <!-- Add Button -->
         <button
-          id="add-todo-button"
-          class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
-        >Add Todo</button>
+          class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+          onclick="addTodo()"
+          type="button"
+        >
+          Add Todo
+        </button>
+      </section>
+
+      <!-- Action Section -->
+      <section class="flex pt-2 justify-between">
+        <!-- Clear All Button -->
+        <button
+          class="border rounded p-2 bg-red-500 text-white"
+          onclick="deleteAllTodos()"
+        >
+          Clear All Todos
+        </button>
+
+        <!-- Filter Options -->
+        <button class="border rounded p-2 bg-blue-500 text-white">
+          Filter Todos
+        </button>
+      </section>
+
+      <!-- Todo List Section -->
+      <section class="pt-2">
+        <header>
+          <h1 class="text-2xl font-semibold">List of Todos</h1>
+        </header>
+
+        <ul class="pt-2" id="todo-list">
+          <!-- Todo items will be dynamically added here -->
+          <li>No todos available</li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Footer Content -->
+    <footer class="pt-8">
+      <p class="text-center text-gray-500">© 2026 Jerry's Todo App</p>
+    </footer>
+
+    <!-- Javascript External -->
+    <script src="js/script.js"></script>
   </body>
 </html>
